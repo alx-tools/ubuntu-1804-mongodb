@@ -22,6 +22,8 @@ RUN pip3 install pymongo
 ADD init.d-mongod /etc/init.d/mongod
 RUN chmod u+x /etc/init.d/mongod
 
+RUN sed -i 's/# set bell-style none/set bell-style none/g' /etc/inputrc
+
 ADD run.sh /tmp/run.sh
 RUN chmod u+x /tmp/run.sh
 
