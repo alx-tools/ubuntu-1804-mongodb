@@ -1,5 +1,4 @@
 # Container for developing MongoDB at Holberton School
-
 FROM holbertonschool/ubuntu-1804-python37
 MAINTAINER Guillaume Salva <guillaume@holbertonschool.com>
 
@@ -24,8 +23,8 @@ RUN chmod u+x /etc/init.d/mongod
 
 RUN sed -i 's/# set bell-style none/set bell-style none/g' /etc/inputrc
 
-ADD run.sh /tmp/run.sh
-RUN chmod u+x /tmp/run.sh
+ADD run.sh /etc/sandbox_run.sh
+RUN chmod u+x /etc/sandbox_run.sh
 
 # start run!
-CMD ["./tmp/run.sh"]
+CMD ["./etc/sandbox_run.sh"]
